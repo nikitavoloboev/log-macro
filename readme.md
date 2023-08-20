@@ -75,6 +75,9 @@ Join [Discord](https://discord.com/invite/TVafwaD23d) for more indepth discussio
 
 ## Tasks
 
+- fix the tests
+  - currently they fail as I am not sure how to actually test that the logs are as they are
+  - GPT says to try use [duct](https://crates.io/crates/duct) potentially but that gave some issues
 - log variables in special color so they can be seen more clearly
   - `variable: value` - the `variable` can be in green color or something
 - [add support for multiple values or different ways of formatting](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx074g9/?utm_source=share&utm_medium=web2x&context=3)
