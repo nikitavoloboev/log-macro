@@ -75,8 +75,10 @@ Join [Discord](https://discord.com/invite/TVafwaD23d) for more indepth discussio
 
 ## Tasks
 
-- [add ability to log multiple variables at once as mentioned](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx081pk/?utm_source=share&utm_medium=web2x&context=3)
+- log variables in special color so they can be seen more clearly
+  - `variable: value` - the `variable` can be in green color or something
 - [add support for multiple values or different ways of formatting](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx074g9/?utm_source=share&utm_medium=web2x&context=3)
+  - not sure what author meant, investigate
 - [get the same level of utilities that Python’s formatted string literals have](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx109os/?utm_source=share&utm_medium=web2x&context=3)
   - `> print(f”operation: {2+1=}”)` -> `operation: 2+1=3`
 - decide if macro should be stripped from release builds or not
