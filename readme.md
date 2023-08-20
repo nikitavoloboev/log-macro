@@ -79,6 +79,9 @@ Join [Discord](https://discord.com/invite/TVafwaD23d) for more indepth discussio
 - [add support for multiple values or different ways of formatting](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx074g9/?utm_source=share&utm_medium=web2x&context=3)
 - [get the same level of utilities that Python’s formatted string literals have](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx109os/?utm_source=share&utm_medium=web2x&context=3)
   - `> print(f”operation: {2+1=}”)` -> `operation: 2+1=3`
+- decide if macro should be stripped from release builds or not
+  - currently it's stripped similar to `dbg!`
+  - potentially provide another near identical macro to keep similar logs but also in release mode?
 
 ### ♥️
 
