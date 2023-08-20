@@ -59,6 +59,9 @@ Join [Discord](https://discord.com/invite/TVafwaD23d) for more indepth discussio
 
 ## Tasks
 
+- add ability to log multiple variables at once as mentioned [here](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx081pk/?utm_source=share&utm_medium=web2x&context=3)
+- [add support for multiple values or different ways of formatting](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx074g9/?utm_source=share&utm_medium=web2x&context=3)
+
 ### ♥️
 
 [Support on GitHub](https://github.com/sponsors/nikitavoloboev) or look into [other projects](https://nikiv.dev/projects).
