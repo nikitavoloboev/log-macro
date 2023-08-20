@@ -69,6 +69,14 @@ macro_rules! log {
 }
 ```
 
+## Run
+
+Will run the tests in [src/lib.rs](src/lib.rs).
+
+```
+cargo watch -q -- sh -c "tput reset && cargo test -q --lib"
+```
+
 ## Contribute
 
 The tasks to do are outlined in [existing issues](../../issues) and in [tasks below](#tasks) (sorted by priority).
