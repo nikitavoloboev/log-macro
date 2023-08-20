@@ -45,20 +45,26 @@ Exported macro code is this:
 macro_rules! log {
     // Single literal string case
     ( $val:expr $(,)? ) => {{
-        if ::std::stringify!($val).starts_with("\"") {
-            // Remove quotes for string literals
-            ::std::eprintln!("{}", ::std::stringify!($val).trim_matches('\"'));
-        } else {
-            ::std::eprintln!("{}: {:?}", ::std::stringify!($val), $val);
+        #[cfg(debug_assertions)]
+        {
+            if ::std::stringify!($val).starts_with("\"") {
+                // Remove quotes for string literals
+                ::std::eprintln!("{}", ::std::stringify!($val).trim_matches('\"'));
+            } else {
+                // Print using a reference to avoid moving the value
+                ::std::eprintln!("{}: {:?}", ::std::stringify!($val), &$val);
+            }
         }
-        $val
     }};
 
     // Multiple variables case
     ( $($val:expr),+ $(,)? ) => {{
-        $(
-            $crate::log!($val);
-        )+
+        #[cfg(debug_assertions)]
+        {
+            $(
+                $crate::log!($val);
+            )+
+        }
     }};
 }
 ```
