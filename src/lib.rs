@@ -1,15 +1,22 @@
-/// Macro to print nicely formatted debug info
-/// can print just a string:
+/// Macro to print nicely formatted debug info. Macro is stripped from release builds.
+///
+/// print string only:
+/// ```rust
 /// log!("hello"); // -> hello
-/// or variable:
-/// let animals = vec!["cat", "dog", "horse", "zebra"];
-/// log!(animals); // -> animals: ["cat", "dog", "horse", "zebra"]
-/// or multiple variables (each variable on new line):
-/// let animals = vec!["cat", "dog", "horse", "zebra"];
-/// let humans = vec!["nikita", "edward"];
-/// log!(animals, humans); // -> animals: ["cat", "dog", "horse", "zebra"] humans: ["nikita", "edward"]
-/// macro is stripped from release builds
-/// credit goes to Icarium-Lifestealer: https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx0pl1o/
+/// ```
+///
+/// print variable + its value:
+/// ```rust
+/// let animals = vec!["cat", "dog"];
+/// log!(animals); // -> animals: ["cat", "dog"]
+/// ```
+/// print multiple variables (each variable printed on new line):
+/// ```rust
+/// let animals = vec!["cat", "dog"];
+/// let fish = vec!["salmon", "tuna"];
+/// log!(animals, fish); -> animals: ["cat", "dog"]
+/// ```
+/// credit for improvements goes to Icarium-Lifestealer: https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx0pl1o/
 #[macro_export]
 macro_rules! log {
     // Single literal string case
@@ -52,11 +59,11 @@ mod tests {
 
     #[test]
     fn print_multiple_variables() {
-        let animals = vec!["cat", "dog", "horse", "zebra"];
-        let humans = vec!["nikita", "edward"];
-        log!(animals, humans);
-        // -> animals: ["cat", "dog", "horse", "zebra"]
-        // -> humans: ["nikita", "edward"]
+        let animals = vec!["cat", "dog"];
+        let fish = vec!["salmon", "tuna"];
+        log!(animals, fish);
+        // -> animals: ["cat", "dog"]
+        // -> fish: ["salmon", "tuna"]
         assert_eq!("fail", "f");
     }
 }

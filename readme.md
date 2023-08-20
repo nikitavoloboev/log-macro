@@ -17,33 +17,49 @@ Add this to top of file:
 extern crate log_macro;
 ```
 
-Then use like so:
+Possible uses and outputs:
 
 ```rust
-let animals = vec!["cat", "dog", "horse", "zebra"];
-let set: std::collections::HashSet<_> = animals.into_iter().collect();
-log!(set);
-```
+// print string only
+log!("hello"); // -> hello
 
-Will print:
+// print variable
+let animals = vec!["cat", "dog"];
+log!(animals); // -> animals: ["cat", "dog"]
 
-```
-set: {"horse", "dog", "zebra", "cat"}
+// print multiple variables
+let animals = vec!["cat", "dog"];
+let fish = vec!["salmon", "tuna"];
+log!(animals, fish);
+// each variable logged on new line
+// -> animals: ["cat", "dog"]
+// -> fish: ["salmon", "tuna"]
 ```
 
 ## Implementation
 
-Exported macro code is simply this:
+Exported macro code is this:
 
 ```rust
 #[macro_export]
 macro_rules! log {
-    ($var:expr) => {
-        #[cfg(debug_assertions)]
-        {
-            println!("{}: {:?}", stringify!($var), $var);
+    // Single literal string case
+    ( $val:expr $(,)? ) => {{
+        if ::std::stringify!($val).starts_with("\"") {
+            // Remove quotes for string literals
+            ::std::eprintln!("{}", ::std::stringify!($val).trim_matches('\"'));
+        } else {
+            ::std::eprintln!("{}: {:?}", ::std::stringify!($val), $val);
         }
-    };
+        $val
+    }};
+
+    // Multiple variables case
+    ( $($val:expr),+ $(,)? ) => {{
+        $(
+            $crate::log!($val);
+        )+
+    }};
 }
 ```
 
