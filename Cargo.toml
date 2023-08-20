@@ -1,6 +1,6 @@
 [package]
 name = "log_macro"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Nikita"]
 categories = ["development-tools"]
 description = "Macro to print variable name and value only (stripped from release builds)"

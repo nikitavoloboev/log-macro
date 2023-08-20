@@ -25,7 +25,8 @@ macro_rules! log {
             // Remove quotes for string literals
             ::std::eprintln!("{}", ::std::stringify!($val).trim_matches('\"'));
         } else {
-            ::std::eprintln!("{}: {:?}", ::std::stringify!($val), $val);
+            // Print using a reference to avoid moving the value
+            ::std::eprintln!("{}: {:?}", ::std::stringify!($val), &$val);
         }
         $val
     }};
