@@ -28,7 +28,6 @@ macro_rules! log {
             // Print using a reference to avoid moving the value
             ::std::eprintln!("{}: {:?}", ::std::stringify!($val), &$val);
         }
-        $val
     }};
 
     // Multiple variables case
@@ -53,8 +52,8 @@ mod tests {
 
     #[test]
     fn print_variable() {
-        let animals = vec!["cat", "dog", "horse", "zebra"];
-        log!(animals); // -> animals: ["cat", "dog", "horse", "zebra"]
+        let animals = vec!["cat", "dog"];
+        log!(animals); // -> animals: ["cat", "dog"]
         assert_eq!("fail", "f");
     }
 
