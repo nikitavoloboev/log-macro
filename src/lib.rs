@@ -9,7 +9,7 @@
 // let humans = vec!["nikita", "edward"];
 // log!(animals, humans); // -> animals: ["cat", "dog", "horse", "zebra"] humans: ["nikita", "edward"]
 // macros are stripped from release builds too
-// got from: https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx0pl1o/
+// credit goes to Icarium-Lifestealer: https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx0pl1o/
 #[macro_export]
 macro_rules! log {
     // Single literal string case
