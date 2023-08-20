@@ -1,4 +1,14 @@
-// Macro to print variable name and value only (stripped from release builds)
+// Macro to print nicely formatted debug info to stderr
+// can print just a string:
+// log!("hello"); // -> hello
+// or variable:
+// let animals = vec!["cat", "dog", "horse", "zebra"];
+// log!(animals); // -> animals: ["cat", "dog", "horse", "zebra"]
+// or multiple variables (each variable on new line):
+// let animals = vec!["cat", "dog", "horse", "zebra"];
+// let humans = vec!["nikita", "edward"];
+// log!(animals, humans); // -> animals: ["cat", "dog", "horse", "zebra"] humans: ["nikita", "edward"]
+// macros are stripped from release builds too
 // got from: https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx0pl1o/
 #[macro_export]
 macro_rules! log {
