@@ -1,8 +1,6 @@
-# log_macro [<img alt="crates.io" src="https://img.shields.io/crates/v/syn.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/syn)
+# log_macro [<img alt="crates.io" src="https://img.shields.io/crates/v/syn.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/log_macro)
 
 > Macro to print variable name and value only (stripped from release builds)
-
-Check [crates.io](https://crates.io/crates/log_macro).
 
 ## Install
 
