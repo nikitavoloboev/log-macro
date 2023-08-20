@@ -1,0 +1,15 @@
+[package]
+name = "log_macro"
+version = "0.1.0"
+authors = ["Nikita"]
+categories = ["development-tools"]
+description = "Macro to print variable name and value only (stripped from release builds)"
+documentation = "https://docs.rs/log_macro"
+keywords = ["debugging", "macro", "print"]
+license = "MIT"
+repository = "https://github.com/nikitavoloboev/log_macro"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
