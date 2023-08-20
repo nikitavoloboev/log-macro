@@ -1,4 +1,4 @@
-/// Macro to print nicely formatted debug info to stderr
+/// Macro to print nicely formatted debug info
 /// can print just a string:
 /// log!("hello"); // -> hello
 /// or variable:
@@ -8,7 +8,7 @@
 /// let animals = vec!["cat", "dog", "horse", "zebra"];
 /// let humans = vec!["nikita", "edward"];
 /// log!(animals, humans); // -> animals: ["cat", "dog", "horse", "zebra"] humans: ["nikita", "edward"]
-/// macros are stripped from release builds too
+/// macro is stripped from release builds
 /// credit goes to Icarium-Lifestealer: https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx0pl1o/
 #[macro_export]
 macro_rules! log {
