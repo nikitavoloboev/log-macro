@@ -75,6 +75,8 @@ Join [Discord](https://discord.com/invite/TVafwaD23d) for more indepth discussio
 
 ## Tasks
 
+- fix docset for the macro export, [nothing is showing](https://docs.rs/log_macro/latest/log_macro/macro.log.html)
+  - there are some errors present after running `cargo test --doc --package log_macro -- log --nocapture`. fix them
 - fix the tests
   - currently they fail as I am not sure how to actually test that the logs are as they are
   - GPT says to try use [duct](https://crates.io/crates/duct) potentially but that gave some issues
