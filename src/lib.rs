@@ -1,4 +1,4 @@
-/// Macro to print nicely formatted debug info. Stripped from release builds.
+/// Macro to print variable(s) with values nicely (stripped from release builds)
 ///
 /// print string only:
 /// ```rust
