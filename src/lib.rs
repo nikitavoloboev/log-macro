@@ -28,7 +28,7 @@ macro_rules! log {
                 ::std::eprintln!("{}", ::std::stringify!($val).trim_matches('\"'));
             } else {
                 // Print using a reference to avoid moving the value
-                ::std::eprintln!("{}: {:?}", ::std::stringify!($val), &$val);
+                ::std::eprintln!("\x1B[32m{}\x1B[0m: {:?}", ::std::stringify!($val), &$val);
             }
         }
     }};

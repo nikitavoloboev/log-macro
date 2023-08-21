@@ -36,6 +36,8 @@ log!(animals, fish);
 // -> fish: ["salmon", "tuna"]
 ```
 
+Variables will be in green color to stand out.
+
 ## Implementation
 
 Exported macro code is this:
@@ -52,7 +54,7 @@ macro_rules! log {
                 ::std::eprintln!("{}", ::std::stringify!($val).trim_matches('\"'));
             } else {
                 // Print using a reference to avoid moving the value
-                ::std::eprintln!("{}: {:?}", ::std::stringify!($val), &$val);
+                ::std::eprintln!("\x1B[32m{}\x1B[0m: {:?}", ::std::stringify!($val), &$val);
             }
         }
     }};
@@ -94,8 +96,6 @@ Join [Discord](https://discord.com/invite/TVafwaD23d) for more indepth discussio
 - fix the tests
   - currently they fail as I am not sure how to actually test that the logs are as they are
   - GPT says to try use [duct](https://crates.io/crates/duct) potentially but that gave some issues
-- log variables in special color so they can be seen more clearly
-  - `variable: value` - the `variable` can be in green color or something
 - [add support for multiple values or different ways of formatting](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx074g9/?utm_source=share&utm_medium=web2x&context=3)
   - not sure what author meant, investigate
 - [get the same level of utilities that Python’s formatted string literals have](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx109os/?utm_source=share&utm_medium=web2x&context=3)
