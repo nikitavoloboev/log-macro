@@ -81,31 +81,16 @@ cargo watch -q -- sh -c "tput reset && cargo test -q --lib"
 
 ## Contribute
 
-The tasks to do are outlined in [existing issues](../../issues) and in [tasks below](#tasks) (sorted by priority).
+Always open to useful ideas or fixes in form of issues or PRs.
 
-If issue/idea you have is not there, [open new issue](../../issues/new/choose) or [start discussion](../../discussions).
+Can [open new issue](../../issues/new/choose) (search [existing issues](../../issues) first) or [start discussion](../../discussions).
 
-Any PR with code/doc improvements is welcome. ✨
+It's okay to submit draft PR as you can get help along the way to make it merge ready.
 
 Join [Discord](https://discord.com/invite/TVafwaD23d) for more indepth discussions on this repo and [others](https://github.com/nikitavoloboev#src).
 
-## Tasks
-
-- fix docset for the macro export, [nothing is showing](https://docs.rs/log_macro/latest/log_macro/macro.log.html)
-  - there are some errors present after running `cargo test --doc --package log_macro -- log --nocapture`. fix them
-- fix the tests
-  - currently they fail as I am not sure how to actually test that the logs are as they are
-  - GPT says to try use [duct](https://crates.io/crates/duct) potentially but that gave some issues
-- [add support for multiple values or different ways of formatting](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx074g9/?utm_source=share&utm_medium=web2x&context=3)
-  - not sure what author meant, investigate
-- [get the same level of utilities that Python’s formatted string literals have](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx109os/?utm_source=share&utm_medium=web2x&context=3)
-  - `> print(f”operation: {2+1=}”)` -> `operation: 2+1=3`
-- decide if macro should be stripped from release builds or not
-  - currently it's stripped similar to `dbg!`
-  - potentially provide another near identical macro to keep similar logs but also in release mode?
-
-### ♥️
+### 🖤
 
 [Support on GitHub](https://github.com/sponsors/nikitavoloboev) or look into [other projects](https://nikiv.dev/projects).
 
-[![MIT](http://bit.ly/mitbadge)](https://choosealicense.com/licenses/mit/) [![Twitter](http://bit.ly/nikitatweet)](https://twitter.com/nikitavoloboev)
+[![Discord](https://img.shields.io/badge/Discord-100000?style=flat&logo=discord&logoColor=white&labelColor=black&color=black)](https://discord.com/invite/TVafwaD23d) [![X](https://img.shields.io/badge/nikitavoloboev-100000?logo=X&color=black)](https://twitter.com/nikitavoloboev) [![nikiv.dev](https://img.shields.io/badge/nikiv.dev-black)](https://nikiv.dev)

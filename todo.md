@@ -1,0 +1,12 @@
+- fix docset for the macro export, [nothing is showing](https://docs.rs/log_macro/latest/log_macro/macro.log.html)
+  - there are some errors present after running `cargo test --doc --package log_macro -- log --nocapture`. fix them
+- fix the tests
+  - currently they fail as I am not sure how to actually test that the logs are as they are
+  - GPT says to try use [duct](https://crates.io/crates/duct) potentially but that gave some issues
+- [add support for multiple values or different ways of formatting](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx074g9/?utm_source=share&utm_medium=web2x&context=3)
+  - not sure what author meant, investigate
+- [get the same level of utilities that Python’s formatted string literals have](https://www.reddit.com/r/rust/comments/15wd5u6/comment/jx109os/?utm_source=share&utm_medium=web2x&context=3)
+  - `> print(f”operation: {2+1=}”)` -> `operation: 2+1=3`
+- decide if macro should be stripped from release builds or not
+  - currently it's stripped similar to `dbg!`
+  - potentially provide another near identical macro to keep similar logs but also in release mode?
