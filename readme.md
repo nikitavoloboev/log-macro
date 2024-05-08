@@ -13,8 +13,7 @@ cargo add log_macro
 Add this to top of file:
 
 ```rust
-#[macro_use]
-extern crate log_macro;
+use log_macro::log;
 ```
 
 Possible uses and outputs:
@@ -40,7 +39,7 @@ Variables will be in green color to stand out.
 
 ## Implementation
 
-Exported macro code is this:
+Exported macro code is in [src/lib.rs](src/lib.rs):
 
 ```rust
 #[macro_export]
@@ -73,7 +72,7 @@ macro_rules! log {
 
 ## Run
 
-Will run the tests in [src/lib.rs](src/lib.rs).
+Will run tests in [src/lib.rs](src/lib.rs).
 
 ```
 cargo watch -q -- sh -c "tput reset && cargo test -q --lib"
